@@ -23,6 +23,10 @@ func _ready() -> void:
 	get_current_date()
 
 func save_file(Store: String, Item: String, Price: String):
+	Store = Store.to_upper()
+	Item = Item.to_upper()
+	Price = Price.to_upper()
+	
 	var date = get_current_date()
 	
 	var existing_data = load_file()

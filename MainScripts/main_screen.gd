@@ -46,9 +46,6 @@ func _on_shop_text_changed() -> void:
 		Pricelist.clear()
 
 
-func _on_price_text_changed() -> void:
-
-	pass # Replace with function body.
 func _on_item_text_changed() -> void:
 
 	pass # Replace with function body.
