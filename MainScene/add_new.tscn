@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://bcvefxg1njiw4"]
 
 [node name="Inputs" type="HBoxContainer" unique_id=1351941071]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 50.0
+grow_horizontal = 2
 
 [node name="Shop" type="TextEdit" parent="." unique_id=987371019]
 custom_minimum_size = Vector2(0, 50)

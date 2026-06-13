@@ -60,6 +60,25 @@ corner_radius_top_right = 15
 corner_radius_bottom_left = 15
 corner_detail = 1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j8kk6"]
+bg_color = Color(0.1764706, 0.019607844, 0.19607843, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.60784316, 0.039215688, 0.5372549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4bof"]
+bg_color = Color(0.2669057, 0.009297321, 0.31076205, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.60784316, 0.039215688, 0.5372549, 1)
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 1
+
 [resource]
 Button/styles/focus = SubResource("StyleBoxFlat_de7rr")
 Button/styles/hover = SubResource("StyleBoxFlat_sduji")
@@ -69,3 +88,5 @@ Label/colors/font_color = Color(0.87380594, 0.89934295, 0.88978064, 1)
 Label/styles/normal = SubResource("StyleBoxFlat_7oiaf")
 LineEdit/styles/focus = SubResource("StyleBoxEmpty_7oiaf")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_wi0rm")
+Panel/styles/panel = SubResource("StyleBoxFlat_j8kk6")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_i4bof")

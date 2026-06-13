@@ -10,8 +10,11 @@ config_version=5
 
 [application]
 
-config/name="Rake_Stats"
+config/name="Item Tracker"
+config/description="A manual price tracker for the items that you commonly bought in stores. You can compare their prices to choose which store to buy in the future."
+config/version="0.0.0.1"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+run/low_processor_mode=true
 config/icon="res://icon.svg"
 
 [autoload]
@@ -20,8 +23,8 @@ GlobalScript="*uid://c1momfvcv4neq"
 
 [display]
 
-window/size/viewport_width=750
-window/size/viewport_height=1440
+window/size/viewport_width=360
+window/size/viewport_height=800
 
 [editor]
 

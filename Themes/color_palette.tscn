@@ -1,34 +1,39 @@
 [gd_scene format=3 uid="uid://diryx7l1prcrw"]
 
-[node name="Node" type="Node" unique_id=783362004]
+[node name="Node" type="HBoxContainer" unique_id=172712440]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 183.0
+grow_horizontal = 2
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=375162625]
-anchors_preset = -1
-anchor_right = 0.10666667
-anchor_bottom = 0.049261082
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 color = Color(0.1764706, 0.019607844, 0.19607843, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=542512677]
-anchors_preset = -1
-anchor_left = 0.12
-anchor_right = 0.22666667
-anchor_bottom = 0.049261082
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 color = Color(0.25490198, 0.039215688, 0.2784314, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect3" type="ColorRect" parent="." unique_id=411988564]
-anchors_preset = -1
-anchor_left = 0.23733333
-anchor_right = 0.344
-anchor_bottom = 0.049261082
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 color = Color(0.25490198, 0.039215688, 0.2784314, 0.49803922)
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect4" type="ColorRect" parent="." unique_id=628887622]
-anchors_preset = -1
-anchor_top = 0.052955665
-anchor_right = 0.10666667
-anchor_bottom = 0.10221675
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 color = Color(0.60784316, 0.039215688, 0.5372549, 1)
 metadata/_edit_use_anchors_ = true

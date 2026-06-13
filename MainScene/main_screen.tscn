@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://fkpccfsifktj"]
 
 [ext_resource type="Script" uid="uid://b51aoqoioktqp" path="res://MainScripts/main_screen.gd" id="1_vkw83"]
+[ext_resource type="Theme" uid="uid://c700gxvpi6778" path="res://Themes/theme.tres" id="2_4xim8"]
 [ext_resource type="Script" uid="uid://dafbb7bol514d" path="res://MainScripts/contents.gd" id="2_ejomr"]
+[ext_resource type="PackedScene" uid="uid://diryx7l1prcrw" path="res://Themes/color_palette.tscn" id="3_0avy4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vkw83"]
 font_size = 30
@@ -24,43 +26,51 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_vkw83")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1830228652]
+[node name="BG" type="Panel" parent="." unique_id=1593453900]
+z_index = -5
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.19076231, 0.19076234, 0.19076225, 1)
+theme = ExtResource("2_4xim8")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=245448536]
+[node name="HEADER" type="PanelContainer" parent="." unique_id=656330559]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 0.12375
+theme = ExtResource("2_4xim8")
+metadata/_edit_use_anchors_ = true
+
+[node name="BODY" type="VBoxContainer" parent="." unique_id=245448536]
 layout_mode = 0
 offset_left = 70.99999
 offset_top = 163.0
 offset_right = 679.0
 offset_bottom = 1277.0
 
-[node name="CurrentDate" type="Label" parent="VBoxContainer" unique_id=862758089]
+[node name="CurrentDate" type="Label" parent="BODY" unique_id=862758089]
 layout_mode = 2
 text = "Testt"
 label_settings = SubResource("LabelSettings_vkw83")
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Inputs" type="HBoxContainer" parent="VBoxContainer" unique_id=2122630551]
+[node name="Inputs" type="HBoxContainer" parent="BODY" unique_id=2122630551]
 layout_mode = 2
 
-[node name="Shop" type="TextEdit" parent="VBoxContainer/Inputs" unique_id=2085164517]
+[node name="Shop" type="TextEdit" parent="BODY/Inputs" unique_id=2085164517]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 placeholder_text = "Store Name"
 
-[node name="Item" type="TextEdit" parent="VBoxContainer/Inputs" unique_id=1684620194]
+[node name="Item" type="TextEdit" parent="BODY/Inputs" unique_id=1684620194]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 placeholder_text = "Item Name"
 
-[node name="Price" type="TextEdit" parent="VBoxContainer/Inputs" unique_id=447860353]
+[node name="Price" type="TextEdit" parent="BODY/Inputs" unique_id=447860353]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 placeholder_text = "Item Price"
@@ -70,20 +80,20 @@ shortcut_keys_enabled = false
 drag_and_drop_selection_enabled = false
 middle_mouse_paste_enabled = false
 
-[node name="Submit" type="Button" parent="VBoxContainer/Inputs" unique_id=1226026996]
+[node name="Submit" type="Button" parent="BODY/Inputs" unique_id=1226026996]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 text = "Submit"
 
-[node name="SpinBox" type="SpinBox" parent="VBoxContainer/Inputs" unique_id=495852881]
+[node name="SpinBox" type="SpinBox" parent="BODY/Inputs" unique_id=495852881]
 visible = false
 layout_mode = 2
 
-[node name="Contents" type="HBoxContainer" parent="VBoxContainer" unique_id=637731970]
+[node name="Contents" type="HBoxContainer" parent="BODY" unique_id=637731970]
 layout_mode = 2
 script = ExtResource("2_ejomr")
 
-[node name="Shops" type="RichTextLabel" parent="VBoxContainer/Contents" unique_id=1017319016]
+[node name="Shops" type="RichTextLabel" parent="BODY/Contents" unique_id=1017319016]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 14
@@ -92,7 +102,7 @@ text = "My name issss reyyk"
 fit_content = true
 scroll_active = false
 
-[node name="Items" type="RichTextLabel" parent="VBoxContainer/Contents" unique_id=1302459765]
+[node name="Items" type="RichTextLabel" parent="BODY/Contents" unique_id=1302459765]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 14
@@ -101,7 +111,7 @@ text = "My name issss reyyk"
 fit_content = true
 scroll_active = false
 
-[node name="Price" type="RichTextLabel" parent="VBoxContainer/Contents" unique_id=1059296215]
+[node name="Price" type="RichTextLabel" parent="BODY/Contents" unique_id=1059296215]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 14
@@ -110,12 +120,12 @@ text = "My name issss reyyk"
 fit_content = true
 scroll_active = false
 
-[node name="Identifier" type="HBoxContainer" parent="VBoxContainer" unique_id=167679470]
+[node name="Identifier" type="HBoxContainer" parent="BODY" unique_id=167679470]
 visible = false
 layout_mode = 2
 alignment = 1
 
-[node name="Shop" type="Label" parent="VBoxContainer/Identifier" unique_id=866944918]
+[node name="Shop" type="Label" parent="BODY/Identifier" unique_id=866944918]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_vkw83")
@@ -124,7 +134,7 @@ label_settings = SubResource("LabelSettings_ejomr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Item" type="Label" parent="VBoxContainer/Identifier" unique_id=289765362]
+[node name="Item" type="Label" parent="BODY/Identifier" unique_id=289765362]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_vkw83")
@@ -133,7 +143,7 @@ label_settings = SubResource("LabelSettings_ejomr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Price" type="Label" parent="VBoxContainer/Identifier" unique_id=1229087386]
+[node name="Price" type="Label" parent="BODY/Identifier" unique_id=1229087386]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_vkw83")
@@ -142,11 +152,20 @@ label_settings = SubResource("LabelSettings_ejomr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SpinBox" type="SpinBox" parent="VBoxContainer/Identifier" unique_id=844324227]
+[node name="SpinBox" type="SpinBox" parent="BODY/Identifier" unique_id=844324227]
 visible = false
 layout_mode = 2
 
-[connection signal="text_changed" from="VBoxContainer/Inputs/Shop" to="." method="_on_shop_text_changed"]
-[connection signal="text_changed" from="VBoxContainer/Inputs/Item" to="." method="_on_item_text_changed"]
-[connection signal="text_changed" from="VBoxContainer/Inputs/Price" to="." method="_on_price_text_changed"]
-[connection signal="pressed" from="VBoxContainer/Inputs/Submit" to="." method="_on_submit_pressed"]
+[node name="Node" parent="." unique_id=783362004 instance=ExtResource("3_0avy4")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.0638889
+anchor_right = -0.06388889
+anchor_bottom = 0.22875
+offset_bottom = 0.0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="text_changed" from="BODY/Inputs/Shop" to="." method="_on_shop_text_changed"]
+[connection signal="text_changed" from="BODY/Inputs/Item" to="." method="_on_item_text_changed"]
+[connection signal="text_changed" from="BODY/Inputs/Price" to="." method="_on_price_text_changed"]
+[connection signal="pressed" from="BODY/Inputs/Submit" to="." method="_on_submit_pressed"]
