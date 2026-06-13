@@ -1,5 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://c700gxvpi6778"]
 
+[ext_resource type="FontFile" uid="uid://dk4ll28tllnaq" path="res://Fonts/upheavtt.ttf" id="1_wi0rm"]
+[ext_resource type="FontFile" uid="uid://r1ph7aulgawc" path="res://Fonts/PixelOperatorMono-Bold.ttf" id="2_de7rr"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_de7rr"]
 bg_color = Color(0.38039216, 0.078431375, 0.41568628, 1)
 
@@ -50,7 +53,7 @@ corner_detail = 1
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7oiaf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wi0rm"]
-content_margin_left = 25.0
+content_margin_left = 15.0
 content_margin_right = 20.0
 bg_color = Color(0.25490198, 0.039215688, 0.2784314, 1)
 border_width_left = 1
@@ -87,7 +90,9 @@ Button/styles/hover = SubResource("StyleBoxFlat_sduji")
 Button/styles/normal = SubResource("StyleBoxFlat_e2k53")
 Button/styles/pressed = SubResource("StyleBoxFlat_nvyf5")
 Label/colors/font_color = Color(0.87380594, 0.89934295, 0.88978064, 1)
+Label/fonts/font = ExtResource("1_wi0rm")
 Label/styles/normal = SubResource("StyleBoxFlat_7oiaf")
+LineEdit/fonts/font = ExtResource("2_de7rr")
 LineEdit/styles/focus = SubResource("StyleBoxEmpty_7oiaf")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_wi0rm")
 Panel/styles/panel = SubResource("StyleBoxFlat_j8kk6")

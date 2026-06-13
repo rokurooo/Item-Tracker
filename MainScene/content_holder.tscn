@@ -45,6 +45,56 @@ corner_detail = 1
 [sub_resource type="Theme" id="Theme_4l3hk"]
 Label/styles/normal = SubResource("StyleBoxFlat_xk0s0")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o00oc"]
+bg_color = Color(0.037058048, 0.1630679, 0.13747314, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
+corner_radius_top_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rpk0k"]
+bg_color = Color(0.17958102, 0.4163825, 0.286463, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
+corner_radius_top_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ry4e3"]
+bg_color = Color(0.08642148, 0.28466356, 0.2107181, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l0mbj"]
+bg_color = Color(0.26395562, 0.0494147, 0.056868747, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
+corner_radius_top_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_abvq3"]
+bg_color = Color(0.6456408, 0.10438714, 0.30291486, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
+corner_radius_top_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3bq0"]
+bg_color = Color(0.44875807, 0.048172988, 0.21581972, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p2sn0"]
 
 [sub_resource type="Animation" id="Animation_p2sn0"]
@@ -74,6 +124,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:custom_minimum_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 30), Vector2(0, 60)]
+}
 
 [sub_resource type="Animation" id="Animation_t0k6t"]
 length = 0.001
@@ -101,6 +163,18 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:custom_minimum_size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 30)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xk0s0"]
 _data = {
@@ -122,7 +196,8 @@ z_index = 2
 custom_minimum_size = Vector2(0, 30)
 anchors_preset = -1
 anchor_right = 1.0
-anchor_bottom = 0.036945812
+anchor_bottom = -0.0068041896
+offset_bottom = 35.44335
 grow_horizontal = 2
 theme_override_constants/separation = -30
 script = ExtResource("1_g2kwr")
@@ -187,12 +262,18 @@ alignment = 1
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme = ExtResource("2_p2sn0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o00oc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rpk0k")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ry4e3")
 text = "EDIT"
 
 [node name="Delete" type="Button" parent="Buttons" unique_id=1991329971]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme = ExtResource("2_p2sn0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_l0mbj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_abvq3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_e3bq0")
 text = "DELETE"
 
 [node name="HSeparator" type="HSeparator" parent="." unique_id=1999473716]

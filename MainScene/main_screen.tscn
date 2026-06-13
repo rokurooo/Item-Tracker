@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://c700gxvpi6778" path="res://Themes/theme.tres" id="2_4xim8"]
 [ext_resource type="PackedScene" uid="uid://diryx7l1prcrw" path="res://Themes/color_palette.tscn" id="3_0avy4"]
 [ext_resource type="PackedScene" uid="uid://xwpx6ctiqvyo" path="res://MainScene/content_holder.tscn" id="3_4xim8"]
+[ext_resource type="Script" uid="uid://befucb6rdlowp" path="res://MainScripts/exit.gd" id="3_pqr1d"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xim8"]
 
@@ -104,6 +105,12 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_vertical_guides_ = [5.0, 355.0]
 
+[node name="ColorPalette" parent="." unique_id=783362004 instance=ExtResource("3_0avy4")]
+layout_mode = 1
+anchor_left = -1.0638889
+anchor_right = -0.06388889
+anchor_bottom = 0.22875
+
 [node name="BG" type="Panel" parent="." unique_id=1593453900]
 z_index = -5
 layout_mode = 1
@@ -117,14 +124,14 @@ theme = ExtResource("2_4xim8")
 [node name="HEADER" type="PanelContainer" parent="." unique_id=656330559]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.0975
+anchor_right = 0.99999994
+anchor_bottom = 0.07875
 theme = ExtResource("2_4xim8")
 metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HEADER" unique_id=2097306272]
 layout_mode = 2
-theme_override_constants/separation = 0
+theme_override_constants/separation = -2
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HEADER/VBoxContainer" unique_id=1456695441]
@@ -132,7 +139,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="Panel" type="Panel" parent="HEADER/VBoxContainer/HBoxContainer" unique_id=754042870]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(50, 45)
 layout_mode = 2
 theme = SubResource("Theme_pqr1d")
 
@@ -160,29 +167,26 @@ theme = SubResource("Theme_pqr1d")
 
 [node name="Title" type="Label" parent="HEADER/VBoxContainer/HBoxContainer/Panel2" unique_id=103469658]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -119.0
-offset_top = -18.5
-offset_right = 119.0
-offset_bottom = 18.5
+anchors_preset = -1
+anchor_left = -0.016064256
+anchor_right = 1.0160643
+anchor_bottom = 1.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.9507027, 0.81896096, 0.9620246, 1)
 theme_override_colors/font_outline_color = Color(0.29829726, 0.006998187, 0.2606307, 1)
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 27
+theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5im0k")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6gaht")
 text = "Item Price Tracker"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="Panel3" type="Panel" parent="HEADER/VBoxContainer/HBoxContainer" unique_id=1299974743]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(50, 45)
 layout_mode = 2
 theme = SubResource("Theme_pqr1d")
 
@@ -207,6 +211,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0avy4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4xim8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_pqr1d")
 text = "x"
+script = ExtResource("3_pqr1d")
 
 [node name="DateToday" type="Label" parent="HEADER/VBoxContainer" unique_id=149895630]
 layout_mode = 2
@@ -248,11 +253,11 @@ anchor_bottom = 1.0
 offset_left = -175.0
 offset_top = -712.0
 offset_right = 175.0
-offset_bottom = 528.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("2_4xim8")
-theme_override_constants/separation = 5
+theme_override_constants/separation = 3
 
 [node name="Search" type="HBoxContainer" parent="BODY" unique_id=2122630551]
 custom_minimum_size = Vector2(20, 0)
@@ -263,8 +268,12 @@ theme_override_constants/separation = -17
 custom_minimum_size = Vector2(150, 30)
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 11
+theme_override_font_sizes/font_size = 14
 placeholder_text = "Search"
+max_length = 30
+context_menu_enabled = false
+emoji_menu_enabled = false
+clear_button_enabled = true
 
 [node name="Submit" type="Button" parent="BODY/Search" unique_id=1226026996]
 visible = false
@@ -273,7 +282,7 @@ layout_mode = 2
 text = "Submit"
 
 [node name="Identifier" type="HBoxContainer" parent="BODY" unique_id=167679470]
-custom_minimum_size = Vector2(50, 50)
+custom_minimum_size = Vector2(50, 35)
 layout_mode = 2
 theme_override_constants/separation = -15
 alignment = 1
@@ -295,15 +304,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Price" type="Label" parent="BODY/Identifier" unique_id=1229087386]
+custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 5
 text = "Prices"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Contents" type="VBoxContainer" parent="BODY" unique_id=549136057]
+[node name="Contents" type="VBoxContainer" parent="BODY" unique_id=676798035]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = -1
 
 [node name="contents" parent="BODY/Contents" unique_id=1633328046 instance=ExtResource("3_4xim8")]
@@ -317,12 +327,3 @@ layout_mode = 2
 
 [node name="contents4" parent="BODY/Contents" unique_id=1819563011 instance=ExtResource("3_4xim8")]
 layout_mode = 2
-
-[node name="ColorPalette" parent="." unique_id=783362004 instance=ExtResource("3_0avy4")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -1.0638889
-anchor_right = -0.06388889
-anchor_bottom = 0.22875
-offset_bottom = 0.0
-metadata/_edit_use_anchors_ = true

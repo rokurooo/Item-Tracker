@@ -1,8 +1,4 @@
 [gd_resource type="Theme" format=3 uid="uid://bq4d8m54t02vk"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7oiaf"]
-bg_color = Color(0.40352526, 0.093555234, 0.3647742, 1)
-
 [resource]
-Label/colors/font_color = Color(0.87380594, 0.89934295, 0.88978064, 1)
-Label/styles/normal = SubResource("StyleBoxFlat_7oiaf")
+Button/styles/normal = null
