@@ -5,7 +5,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8cq60"]
 
-[node name="VBoxContainer" type="VBoxContainer" unique_id=1912251622]
+[node name="Color Palette" type="VBoxContainer" unique_id=1912251622]
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.0625

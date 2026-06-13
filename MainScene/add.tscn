@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://ddgpv7navjqxl"]
 
+[ext_resource type="Script" uid="uid://dxfdmnspslsnq" path="res://MainScripts/add_content.gd" id="1_gi5fb"]
+[ext_resource type="Theme" uid="uid://c700gxvpi6778" path="res://Themes/theme.tres" id="2_5hn04"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejomr"]
 bg_color = Color(0.38115525, 0.07881608, 0.41417044, 1)
 border_width_left = 1
@@ -39,15 +42,73 @@ bg_color = Color(0.45999414, 0.04004316, 0.1496923, 1)
 corner_radius_top_right = 10
 corner_radius_bottom_left = 10
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63ai0"]
+content_margin_left = 20.0
+content_margin_top = 7.0
+bg_color = Color(0.25636634, 0.03797835, 0.27809763, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6080234, 0.0375442, 0.5357394, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwowp"]
+content_margin_left = 20.0
+bg_color = Color(0.30147502, 0.011222539, 0.16772547, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.6080234, 0.0375442, 0.5357394, 1)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_63ai0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6tx4"]
+bg_color = Color(0.03529412, 0.16470589, 0.13725491, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
+corner_radius_top_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0so3"]
+bg_color = Color(0.18039216, 0.41568628, 0.28627452, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
+corner_radius_top_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ef5g"]
+bg_color = Color(0.08627451, 0.28627452, 0.21176471, 1)
+
 [node name="Add" type="Button" unique_id=1187253625]
 custom_minimum_size = Vector2(42, 42)
-anchors_preset = -1
-anchor_left = 0.08
-anchor_top = 0.08
-anchor_right = 0.92
-anchor_bottom = 0.92
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_constants/align_to_largest_stylebox = 1
 theme_override_font_sizes/font_size = 20
 theme_override_styles/normal = SubResource("StyleBoxFlat_ejomr")
@@ -55,4 +116,100 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0avy4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4xim8")
 theme_override_styles/focus = SubResource("StyleBoxFlat_pqr1d")
 text = ">"
-metadata/_edit_use_anchors_ = true
+script = ExtResource("1_gi5fb")
+
+[node name="Menu" type="CanvasLayer" parent="." unique_id=1741196155]
+layer = 10
+
+[node name="Panel" type="Panel" parent="Menu" unique_id=666747815]
+custom_minimum_size = Vector2(360, 700)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 84.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_5hn04")
+
+[node name="Menu Input" type="VBoxContainer" parent="Menu/Panel" unique_id=1351941071]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 17.0
+offset_right = -19.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_5hn04")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Menu/Panel/Menu Input" unique_id=1347293557]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="Title" type="Label" parent="Menu/Panel/Menu Input/VBoxContainer2" unique_id=738537617]
+z_index = 2
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_63ai0")
+text = "Add new products"
+horizontal_alignment = 1
+
+[node name="Warning" type="Label" parent="Menu/Panel/Menu Input/VBoxContainer2" unique_id=1902831188]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_qwowp")
+text = "Warning"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Menu/Panel/Menu Input" unique_id=1075860822]
+layout_mode = 2
+theme_override_constants/separation = 1
+theme_override_styles/separator = SubResource("StyleBoxEmpty_63ai0")
+
+[node name="Shop" type="LineEdit" parent="Menu/Panel/Menu Input" unique_id=572098663]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Store Name"
+max_length = 35
+context_menu_enabled = false
+emoji_menu_enabled = false
+clear_button_enabled = true
+
+[node name="Item" type="LineEdit" parent="Menu/Panel/Menu Input" unique_id=1653244157]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Item Name"
+max_length = 35
+context_menu_enabled = false
+emoji_menu_enabled = false
+clear_button_enabled = true
+
+[node name="Price" type="LineEdit" parent="Menu/Panel/Menu Input" unique_id=1847771138]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Item Price"
+max_length = 35
+context_menu_enabled = false
+emoji_menu_enabled = false
+clear_button_enabled = true
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Submit" type="Button" parent="Menu/Panel/Menu Input" unique_id=424429519]
+layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_q6tx4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a0so3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5ef5g")
+text = "Submit"
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

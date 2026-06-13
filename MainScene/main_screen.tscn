@@ -1,97 +1,9 @@
 [gd_scene format=3 uid="uid://fkpccfsifktj"]
 
-[ext_resource type="PackedScene" uid="uid://ddgpv7navjqxl" path="res://MainScene/add.tscn" id="2_0avy4"]
 [ext_resource type="Theme" uid="uid://c700gxvpi6778" path="res://Themes/theme.tres" id="2_4xim8"]
 [ext_resource type="PackedScene" uid="uid://diryx7l1prcrw" path="res://Themes/color_palette.tscn" id="3_0avy4"]
 [ext_resource type="PackedScene" uid="uid://xwpx6ctiqvyo" path="res://MainScene/content_holder.tscn" id="3_4xim8"]
-[ext_resource type="Script" uid="uid://befucb6rdlowp" path="res://MainScripts/exit.gd" id="3_pqr1d"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xim8"]
-
-[sub_resource type="Theme" id="Theme_pqr1d"]
-Panel/styles/panel = SubResource("StyleBoxEmpty_4xim8")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5im0k"]
-bg_color = Color(0.38115525, 0.07881608, 0.41417044, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
-corner_radius_top_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6gaht"]
-content_margin_bottom = 10.0
-bg_color = Color(0.13444898, 0.110022165, 0.26910233, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
-corner_radius_top_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mahag"]
-bg_color = Color(0.5202068, 0.12291535, 0.67227644, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
-corner_radius_top_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8sqy"]
-bg_color = Color(0.28353447, 0.1741803, 0.43143523, 1)
-corner_radius_top_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5im0k"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6gaht"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejomr"]
-bg_color = Color(0.38115525, 0.07881608, 0.41417044, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
-corner_radius_top_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0avy4"]
-content_margin_bottom = 10.0
-bg_color = Color(0.25805703, 0.057830095, 0.06526309, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
-corner_radius_top_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xim8"]
-bg_color = Color(0.6207544, 0.17329454, 0.25535768, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
-corner_radius_top_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqr1d"]
-bg_color = Color(0.45999414, 0.04004316, 0.1496923, 1)
-corner_radius_top_right = 10
-corner_radius_bottom_left = 10
+[ext_resource type="PackedScene" uid="uid://b6tbmk7cv336f" path="res://MainScene/header.tscn" id="3_pqr1d"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vkw83"]
 font_size = 30
@@ -121,115 +33,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_4xim8")
 
-[node name="HEADER" type="PanelContainer" parent="." unique_id=656330559]
+[node name="HEADER" parent="." unique_id=1724666578 instance=ExtResource("3_pqr1d")]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.99999994
-anchor_bottom = 0.07875
-theme = ExtResource("2_4xim8")
-metadata/_edit_use_anchors_ = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="HEADER" unique_id=2097306272]
-layout_mode = 2
-theme_override_constants/separation = -2
-alignment = 1
-
-[node name="HBoxContainer" type="HBoxContainer" parent="HEADER/VBoxContainer" unique_id=1456695441]
-layout_mode = 2
-alignment = 1
-
-[node name="Panel" type="Panel" parent="HEADER/VBoxContainer/HBoxContainer" unique_id=754042870]
-custom_minimum_size = Vector2(50, 45)
-layout_mode = 2
-theme = SubResource("Theme_pqr1d")
-
-[node name="Add" parent="HEADER/VBoxContainer/HBoxContainer/Panel" unique_id=1187253625 instance=ExtResource("2_0avy4")]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -21.0
-offset_top = -21.0
-offset_right = 21.0
-offset_bottom = 21.0
-theme_override_styles/normal = SubResource("StyleBoxFlat_5im0k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_6gaht")
-theme_override_styles/hover = SubResource("StyleBoxFlat_mahag")
-theme_override_styles/focus = SubResource("StyleBoxFlat_u8sqy")
-text = "+"
-
-[node name="Panel2" type="Panel" parent="HEADER/VBoxContainer/HBoxContainer" unique_id=900404215]
-layout_mode = 2
-size_flags_horizontal = 3
-theme = SubResource("Theme_pqr1d")
-
-[node name="Title" type="Label" parent="HEADER/VBoxContainer/HBoxContainer/Panel2" unique_id=103469658]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.016064256
-anchor_right = 1.0160643
-anchor_bottom = 1.0
-offset_bottom = -5.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.9507027, 0.81896096, 0.9620246, 1)
-theme_override_colors/font_outline_color = Color(0.29829726, 0.006998187, 0.2606307, 1)
-theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 25
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5im0k")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6gaht")
-text = "Item Price Tracker"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Panel3" type="Panel" parent="HEADER/VBoxContainer/HBoxContainer" unique_id=1299974743]
-custom_minimum_size = Vector2(50, 45)
-layout_mode = 2
-theme = SubResource("Theme_pqr1d")
-
-[node name="Exit" type="Button" parent="HEADER/VBoxContainer/HBoxContainer/Panel3" unique_id=38895346]
-custom_minimum_size = Vector2(42, 42)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -21.0
-offset_top = -21.0
-offset_right = 21.0
-offset_bottom = 21.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/align_to_largest_stylebox = 1
-theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_ejomr")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_0avy4")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4xim8")
-theme_override_styles/focus = SubResource("StyleBoxFlat_pqr1d")
-text = "x"
-script = ExtResource("3_pqr1d")
-
-[node name="DateToday" type="Label" parent="HEADER/VBoxContainer" unique_id=149895630]
-layout_mode = 2
-theme_override_font_sizes/font_size = 12
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5im0k")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6gaht")
-text = "Date Today"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Credits" type="Label" parent="HEADER/VBoxContainer" unique_id=1373436297]
-layout_mode = 2
-theme_override_font_sizes/font_size = 6
-theme_override_styles/normal = SubResource("StyleBoxEmpty_5im0k")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6gaht")
-text = "By: rakehoe"
-horizontal_alignment = 1
-vertical_alignment = 2
+offset_bottom = 68.0
 
 [node name="CurrentDate" type="Label" parent="." unique_id=862758089]
 visible = false
@@ -251,7 +57,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -175.0
-offset_top = -712.0
+offset_top = -716.0
 offset_right = 175.0
 offset_bottom = -9.0
 grow_horizontal = 2
