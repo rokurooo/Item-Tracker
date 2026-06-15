@@ -5,9 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://b6tbmk7cv336f" path="res://MainScene/header.tscn" id="3_pqr1d"]
 [ext_resource type="Script" uid="uid://luixnttobsos" path="res://MainScripts/content_list.gd" id="4_4xim8"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_vkw83"]
-font_size = 30
-
 [node name="Main_Screen" type="Control" unique_id=2010302701]
 layout_mode = 3
 anchors_preset = 15
@@ -15,9 +12,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_4xim8")
 metadata/_edit_vertical_guides_ = [5.0, 355.0]
 
 [node name="ColorPalette" parent="." unique_id=783362004 instance=ExtResource("3_0avy4")]
+visible = false
 layout_mode = 1
 anchor_left = -1.0638889
 anchor_right = -0.06388889
@@ -36,18 +35,6 @@ theme = ExtResource("2_4xim8")
 [node name="HEADER" parent="." unique_id=1724666578 instance=ExtResource("3_pqr1d")]
 layout_mode = 1
 offset_bottom = 68.0
-
-[node name="CurrentDate" type="Label" parent="." unique_id=862758089]
-visible = false
-layout_mode = 0
-offset_left = 70.99999
-offset_top = 163.0
-offset_right = 679.0
-offset_bottom = 205.0
-text = "Testt"
-label_settings = SubResource("LabelSettings_vkw83")
-horizontal_alignment = 1
-vertical_alignment = 2
 
 [node name="BODY" type="VBoxContainer" parent="." unique_id=245448536]
 layout_mode = 1

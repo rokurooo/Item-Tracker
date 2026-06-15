@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://diryx7l1prcrw"]
 
 [ext_resource type="Theme" uid="uid://c700gxvpi6778" path="res://Themes/theme.tres" id="1_8cq60"]
-[ext_resource type="Script" uid="uid://ccd4xjgc5h1ft" path="res://Themes/label.gd" id="1_21n8h"]
+[ext_resource type="Script" uid="uid://dvlokn8hqp5ac" path="res://Themes/color_palette.gd" id="2_3dv87"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8cq60"]
 
@@ -11,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 0.0625
 grow_horizontal = 2
 theme = ExtResource("1_8cq60")
+script = ExtResource("2_3dv87")
 metadata/_edit_use_anchors_ = true
 
 [node name="Main" type="HBoxContainer" parent="." unique_id=172712440]
@@ -43,7 +44,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_8cq60")
 text = "BG"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_21n8h")
 
 [node name="Default" type="ColorRect" parent="Main" unique_id=542512677]
 custom_minimum_size = Vector2(50, 50)
@@ -72,7 +72,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_8cq60")
 text = "Default"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_21n8h")
 
 [node name="Panel" type="ColorRect" parent="Main" unique_id=411988564]
 custom_minimum_size = Vector2(50, 50)
@@ -101,7 +100,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_8cq60")
 text = "Panel"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_21n8h")
 
 [node name="Border" type="ColorRect" parent="Main" unique_id=628887622]
 custom_minimum_size = Vector2(50, 50)
@@ -130,7 +128,122 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_8cq60")
 text = "Border"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_21n8h")
+
+[node name="Main2" type="HBoxContainer" parent="." unique_id=1420253092]
+layout_mode = 2
+
+[node name="BG" type="ColorRect" parent="Main2" unique_id=589603139]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_8cq60")
+color = Color(0.048748285, 0.14716917, 0.18498898, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Main2/BG" unique_id=1848884380]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8cq60")
+text = "BG"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Default" type="ColorRect" parent="Main2" unique_id=503985907]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+color = Color(0.075900815, 0.23722059, 0.28930053, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Main2/Default" unique_id=533502456]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8cq60")
+text = "Default"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="ColorRect" parent="Main2" unique_id=1731071474]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+color = Color(0.11764706, 0.33333334, 0.4, 0.49803922)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Main2/Panel" unique_id=2129975377]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8cq60")
+text = "Panel"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="ColorRect" parent="Main2" unique_id=1949695563]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+color = Color(0.07975673, 0.14548734, 0.2613558, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Main2/Border" unique_id=874710224]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8cq60")
+text = "Border"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="AcceptButton" type="HBoxContainer" parent="." unique_id=668754498]
 layout_mode = 2
@@ -140,7 +253,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-color = Color(0.25490198, 0.039215688, 0.2784314, 1)
+color = Color(0.043137256, 0.16470589, 0.20392157, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="AcceptButton/Normal" unique_id=2143580508]
@@ -162,7 +275,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_8cq60")
 text = "Normal"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_21n8h")
 
 [node name="Pressed" type="ColorRect" parent="AcceptButton" unique_id=1149138846]
 custom_minimum_size = Vector2(50, 50)
@@ -191,7 +303,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_8cq60")
 text = "Pressed"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_21n8h")
 
 [node name="Focused" type="ColorRect" parent="AcceptButton" unique_id=1690012201]
 custom_minimum_size = Vector2(50, 50)
@@ -220,7 +331,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_8cq60")
 text = "Focused"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_21n8h")
 
 [node name="Hover" type="ColorRect" parent="AcceptButton" unique_id=1121737235]
 custom_minimum_size = Vector2(50, 50)
@@ -249,7 +359,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_8cq60")
 text = "Hover"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_21n8h")
 
 [node name="RejectButton" type="HBoxContainer" parent="." unique_id=1847440129]
 layout_mode = 2
@@ -259,7 +368,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-color = Color(0.25490198, 0.039215688, 0.2784314, 1)
+color = Color(0.043137256, 0.16470589, 0.20392157, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="RejectButton/Normal" unique_id=1213443457]
@@ -281,7 +390,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_8cq60")
 text = "Normal"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_21n8h")
 
 [node name="Pressed" type="ColorRect" parent="RejectButton" unique_id=444226193]
 custom_minimum_size = Vector2(50, 50)
@@ -310,7 +418,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_8cq60")
 text = "Pressed"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_21n8h")
 
 [node name="Focused" type="ColorRect" parent="RejectButton" unique_id=2141362241]
 custom_minimum_size = Vector2(50, 50)
@@ -339,7 +446,6 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_8cq60")
 text = "Focused"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_21n8h")
 
 [node name="Hover" type="ColorRect" parent="RejectButton" unique_id=2107541496]
 custom_minimum_size = Vector2(50, 50)
@@ -368,4 +474,3 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_8cq60")
 text = "Hover"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_21n8h")

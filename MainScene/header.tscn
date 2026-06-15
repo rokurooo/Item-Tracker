@@ -11,59 +11,7 @@
 [sub_resource type="Theme" id="Theme_pqr1d"]
 Panel/styles/panel = SubResource("StyleBoxEmpty_4xim8")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejomr"]
-bg_color = Color(0.38115525, 0.07881608, 0.41417044, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
-corner_radius_top_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0avy4"]
-content_margin_bottom = 10.0
-bg_color = Color(0.03529412, 0.16470589, 0.13725491, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
-corner_radius_top_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xim8"]
-bg_color = Color(0.18039216, 0.41568628, 0.28627452, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
-corner_radius_top_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqr1d"]
-bg_color = Color(0.08627451, 0.28627452, 0.21176471, 1)
-corner_radius_top_right = 10
-corner_radius_bottom_left = 10
-
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5im0k"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6gaht"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1n0kl"]
-bg_color = Color(0.38115525, 0.07881608, 0.41417044, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
-corner_radius_top_right = 10
-corner_radius_bottom_left = 10
-corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ps477"]
 content_margin_bottom = 10.0
@@ -72,7 +20,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
 corner_radius_top_right = 10
 corner_radius_bottom_left = 10
 corner_detail = 1
@@ -83,15 +31,12 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
 corner_radius_top_right = 10
 corner_radius_bottom_left = 10
 corner_detail = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1yird"]
-bg_color = Color(0.45999414, 0.04004316, 0.1496923, 1)
-corner_radius_top_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6gaht"]
 
 [node name="HEADER" type="PanelContainer" unique_id=1724666578]
 z_index = 20
@@ -121,6 +66,7 @@ layout_mode = 2
 theme = SubResource("Theme_pqr1d")
 
 [node name="Menu" type="Button" parent="VBoxContainer/HBoxContainer/Panel" unique_id=1187253625]
+visible = false
 custom_minimum_size = Vector2(42, 42)
 layout_mode = 1
 anchors_preset = 8
@@ -138,10 +84,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/align_to_largest_stylebox = 1
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_ejomr")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_0avy4")
-theme_override_styles/hover = SubResource("StyleBoxFlat_4xim8")
-theme_override_styles/focus = SubResource("StyleBoxFlat_pqr1d")
 text = "+"
 script = ExtResource("3_ikxw6")
 
@@ -165,12 +107,9 @@ anchor_bottom = 1.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.9507027, 0.81896096, 0.9620246, 1)
-theme_override_colors/font_outline_color = Color(0.29829726, 0.006998187, 0.2606307, 1)
-theme_override_constants/outline_size = 10
+theme_override_colors/font_color = Color(0.7294118, 0.78039217, 0.7647059, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5im0k")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_6gaht")
 text = "Item Price Tracker"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -197,10 +136,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/align_to_largest_stylebox = 1
 theme_override_font_sizes/font_size = 20
-theme_override_styles/normal = SubResource("StyleBoxFlat_1n0kl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ps477")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v7f8x")
-theme_override_styles/focus = SubResource("StyleBoxFlat_1yird")
 text = "x"
 script = ExtResource("3_mq451")
 
