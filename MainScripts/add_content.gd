@@ -1,38 +1,27 @@
 @tool
-extends Button
+extends Panel
 
-@onready var warninglabel = $"Menu/Panel/Menu Input/VBoxContainer2/Warning"
+@onready var warninglabel = $Container/VBoxContainer2/Warning
 var menu_toggled: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$Menu.visible = false
 	warninglabel.visible = false
 	pass # Replace with function body.
-
-func _on_pressed() -> void:
-	if !menu_toggled:
-		text = "-"
-		$Menu.visible = true
-		menu_toggled = true
-	else:
-		text = "+"
-		$Menu.visible = false
-		menu_toggled = false
 
 func _warn(item, shop, empty: bool):
 	if !empty:
 		item = GlobalScript.to_sentenced_case(item)
 		shop = GlobalScript.to_sentenced_case(shop)
-		warninglabel.text = "%s already have %s \t Can't add existing item!" %[shop,item]
+		warninglabel.text = "%s already have \n [ %s ] \n Can't add existing item!" %[shop.to_upper(),item]
 	elif empty:
 		warninglabel.text = "The price can't be empty"
 	warninglabel.visible = true
 
-@onready var shop_name_input = $"Menu/Panel/Menu Input/MatchedShop/Shop"
+@onready var shop_name_input = $Container/MatchedShop/Shop
 
 func _matched_shop(enteredshop: String):
 	warninglabel.visible = false
-	var shopcontainer = $"Menu/Panel/Menu Input/MatchedShop"
+	var shopcontainer = $Container/MatchedShop
 	if enteredshop.is_empty():
 		_clearing_child(shopcontainer)
 		return
@@ -47,11 +36,11 @@ func _matched_shop(enteredshop: String):
 			shopcontainer.add_child(shopholder)
 
 
-@onready var item_name_input = $"Menu/Panel/Menu Input/MatchedItems/Item"
+@onready var item_name_input = $Container/MatchedItems/Item
 
 func _matched_item(entereditem: String):
 	warninglabel.visible = false
-	var itemcontainer = $"Menu/Panel/Menu Input/MatchedItems"
+	var itemcontainer = $Container/MatchedItems
 	if entereditem.is_empty():
 		_clearing_child(itemcontainer)
 		return
@@ -73,7 +62,7 @@ func _price_input(price_amount):
 
 func _submit_items():
 	var data_list = GlobalScript.load_file()
-	var price_input = $"Menu/Panel/Menu Input/Price"
+	var price_input = $Container/Price
 	if price_input.text.is_empty():
 		_warn("none","none",true)
 		return

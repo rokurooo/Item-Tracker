@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b6tbmk7cv336f"]
 
 [ext_resource type="Theme" uid="uid://c700gxvpi6778" path="res://Themes/theme.tres" id="1_ml151"]
-[ext_resource type="PackedScene" uid="uid://ddgpv7navjqxl" path="res://MainScene/add.tscn" id="2_b6d8j"]
 [ext_resource type="Script" uid="uid://beihq2chki7h6" path="res://MainScripts/header.gd" id="2_mq451"]
 [ext_resource type="Script" uid="uid://c81owxjrfv4q" path="res://MainScripts/menu.gd" id="3_ikxw6"]
 [ext_resource type="Script" uid="uid://befucb6rdlowp" path="res://MainScripts/exit.gd" id="3_mq451"]
@@ -22,6 +21,29 @@ corner_detail = 1
 
 [sub_resource type="Theme" id="Theme_pqr1d"]
 Panel/styles/panel = SubResource("StyleBoxEmpty_4xim8")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0avy4"]
+content_margin_bottom = 10.0
+bg_color = Color(0.03529412, 0.16470589, 0.13725491, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4xim8"]
+bg_color = Color(0.18039216, 0.41568628, 0.28627452, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5im0k"]
 
@@ -104,9 +126,27 @@ script = ExtResource("3_ikxw6")
 
 [node name="Menu" type="CanvasLayer" parent="VBoxContainer/HBoxContainer/Panel/Menu" unique_id=960807550]
 
-[node name="Add" parent="VBoxContainer/HBoxContainer/Panel" unique_id=1578601692 instance=ExtResource("2_b6d8j")]
+[node name="Add" type="Button" parent="VBoxContainer/HBoxContainer/Panel" unique_id=1578601692]
+custom_minimum_size = Vector2(42, 42)
 layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -21.0
+offset_right = 21.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/align_to_largest_stylebox = 1
 theme_override_fonts/font = ExtResource("5_ikxw6")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0avy4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4xim8")
 text = "+"
 
 [node name="Panel2" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=620007829]
@@ -175,3 +215,5 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_6gaht")
 text = "By: rakehoe"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Panel/Add" to="." method="_on_add_pressed"]

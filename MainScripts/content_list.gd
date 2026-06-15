@@ -25,7 +25,6 @@ func display_all_content():
 			content_instance.ITEMNAME = items["Item_Name"]
 			content_instance.ITEMPRICE = str(items["Item_Price"])
 			content_instance.connect("boop",booped)
-		print("%s = key" %shops)
 
 func booped():
 	for i in get_child_count():

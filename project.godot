@@ -25,6 +25,9 @@ GlobalScript="*uid://c1momfvcv4neq"
 
 window/size/viewport_width=360
 window/size/viewport_height=800
+window/size/resizable=false
+window/size/maximize_disabled=true
+window/handheld/orientation=1
 
 [editor]
 

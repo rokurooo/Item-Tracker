@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://c56ap1m833nw0"]
+
+[ext_resource type="Theme" uid="uid://c700gxvpi6778" path="res://Themes/theme.tres" id="1_xngu4"]
+[ext_resource type="FontFile" uid="uid://r1ph7aulgawc" path="res://Fonts/PixelOperatorMono-Bold.ttf" id="2_nb51a"]
+[ext_resource type="Script" uid="uid://dxfdmnspslsnq" path="res://MainScripts/add_content.gd" id="2_q087n"]
+[ext_resource type="FontFile" uid="uid://dk4ll28tllnaq" path="res://Fonts/upheavtt.ttf" id="3_q087n"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_63ai0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwowp"]
+content_margin_left = 20.0
+content_margin_top = 5.0
+content_margin_right = 20.0
+content_margin_bottom = 5.0
+bg_color = Color(0.42352942, 0.12156863, 0.1764706, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bepxx"]
+content_margin_left = 20.0
+content_margin_top = 2.0
+content_margin_right = 20.0
+content_margin_bottom = 4.0
+bg_color = Color(0.11764706, 0.33333334, 0.4, 0.49803922)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xx12k"]
+content_margin_left = 20.0
+content_margin_top = 2.0
+content_margin_right = 20.0
+content_margin_bottom = 4.0
+bg_color = Color(0.11764706, 0.33333334, 0.4, 0.49803922)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ixj3"]
+content_margin_left = 20.0
+content_margin_top = 2.0
+content_margin_right = 20.0
+content_margin_bottom = 4.0
+bg_color = Color(0.11764706, 0.33333334, 0.4, 0.49803922)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6tx4"]
+bg_color = Color(0.03529412, 0.16470589, 0.13725491, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
+corner_radius_top_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0so3"]
+bg_color = Color(0.18039216, 0.41568628, 0.28627452, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
+corner_radius_top_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 1
+
+[node name="AddInput" type="Panel" unique_id=1759049304]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xngu4")
+script = ExtResource("2_q087n")
+
+[node name="Container" type="VBoxContainer" parent="." unique_id=234673822]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_right = 150.0
+offset_bottom = 210.0
+grow_horizontal = 2
+theme = ExtResource("1_xngu4")
+
+[node name="HSeparator" type="HSeparator" parent="Container" unique_id=1216864936]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_63ai0")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Container" unique_id=109286337]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="Title" type="Label" parent="Container/VBoxContainer2" unique_id=1374927967]
+z_index = 2
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+text = "Add new product"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Warning" type="Label" parent="Container/VBoxContainer2" unique_id=1501487720]
+z_index = 1
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = -1
+theme_override_fonts/font = ExtResource("2_nb51a")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_qwowp")
+text = "Warning this item already exist"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="MatchedShop" type="VBoxContainer" parent="Container" unique_id=1178047412]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="Shop" type="LineEdit" parent="Container/MatchedShop" unique_id=2082183010]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_bepxx")
+placeholder_text = "Store Name"
+max_length = 35
+context_menu_enabled = false
+emoji_menu_enabled = false
+clear_button_enabled = true
+
+[node name="MatchedItems" type="VBoxContainer" parent="Container" unique_id=2038756526]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="Item" type="LineEdit" parent="Container/MatchedItems" unique_id=1651934012]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_xx12k")
+placeholder_text = "Item Name"
+max_length = 35
+context_menu_enabled = false
+emoji_menu_enabled = false
+clear_button_enabled = true
+
+[node name="Price" type="LineEdit" parent="Container" unique_id=433526407]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ixj3")
+placeholder_text = "Item Price"
+max_length = 35
+context_menu_enabled = false
+emoji_menu_enabled = false
+clear_button_enabled = true
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Submit" type="Button" parent="Container" unique_id=697079559]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_q087n")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/pressed = SubResource("StyleBoxFlat_q6tx4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a0so3")
+text = "Submit"
+
+[connection signal="text_changed" from="Container/MatchedShop/Shop" to="." method="_matched_shop"]
+[connection signal="text_changed" from="Container/MatchedItems/Item" to="." method="_matched_item"]
+[connection signal="text_changed" from="Container/Price" to="." method="_price_input"]
+[connection signal="pressed" from="Container/Submit" to="." method="_submit_items"]

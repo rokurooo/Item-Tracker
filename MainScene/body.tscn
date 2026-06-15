@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://dvj2vf0f21qhj"]
+
+[ext_resource type="Theme" uid="uid://c700gxvpi6778" path="res://Themes/theme.tres" id="1_if07q"]
+[ext_resource type="Script" uid="uid://luixnttobsos" path="res://MainScripts/content_list.gd" id="2_v1pg8"]
+
+[node name="BODY" type="VBoxContainer" unique_id=57840723]
+clip_contents = true
+theme = ExtResource("1_if07q")
+theme_override_constants/separation = 3
+
+[node name="Search" type="HBoxContainer" parent="." unique_id=803344540]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_constants/separation = -17
+
+[node name="SearchBar" type="LineEdit" parent="Search" unique_id=892973320]
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 14
+placeholder_text = "Search"
+max_length = 30
+context_menu_enabled = false
+emoji_menu_enabled = false
+clear_button_enabled = true
+
+[node name="Submit" type="Button" parent="Search" unique_id=1501754837]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = "Submit"
+
+[node name="Identifier" type="HBoxContainer" parent="." unique_id=973386193]
+custom_minimum_size = Vector2(50, 35)
+layout_mode = 2
+theme_override_constants/separation = -15
+alignment = 1
+
+[node name="Shop" type="Label" parent="Identifier" unique_id=1304244595]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+text = "Shops"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Item" type="Label" parent="Identifier" unique_id=345128832]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 5
+text = "Items"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Price" type="Label" parent="Identifier" unique_id=1455199201]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 5
+text = "Prices"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Contents" type="VBoxContainer" parent="." unique_id=2011475815]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = -1
+script = ExtResource("2_v1pg8")

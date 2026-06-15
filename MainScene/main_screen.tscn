@@ -3,7 +3,14 @@
 [ext_resource type="Theme" uid="uid://c700gxvpi6778" path="res://Themes/theme.tres" id="2_4xim8"]
 [ext_resource type="PackedScene" uid="uid://diryx7l1prcrw" path="res://Themes/color_palette.tscn" id="3_0avy4"]
 [ext_resource type="PackedScene" uid="uid://b6tbmk7cv336f" path="res://MainScene/header.tscn" id="3_pqr1d"]
-[ext_resource type="Script" uid="uid://luixnttobsos" path="res://MainScripts/content_list.gd" id="4_4xim8"]
+[ext_resource type="PackedScene" uid="uid://dvj2vf0f21qhj" path="res://MainScene/body.tscn" id="4_4xim8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xim8"]
+content_margin_left = 5.0
+content_margin_top = 0.0
+content_margin_right = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pqr1d"]
 
 [node name="Main_Screen" type="Control" unique_id=2010302701]
 layout_mode = 3
@@ -32,81 +39,26 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_4xim8")
 
-[node name="HEADER" parent="." unique_id=1724666578 instance=ExtResource("3_pqr1d")]
+[node name="ALL" type="VBoxContainer" parent="." unique_id=1123505968]
 layout_mode = 1
-offset_bottom = 68.0
-
-[node name="BODY" type="VBoxContainer" parent="." unique_id=245448536]
-custom_minimum_size = Vector2(0, 700)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -175.0
-offset_top = -716.0
-offset_right = 175.0
-offset_bottom = -9.0
 grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("2_4xim8")
-theme_override_constants/separation = 3
+grow_vertical = 2
 
-[node name="Search" type="HBoxContainer" parent="BODY" unique_id=2122630551]
-custom_minimum_size = Vector2(20, 0)
+[node name="HEADER" parent="ALL" unique_id=1724666578 instance=ExtResource("3_pqr1d")]
 layout_mode = 2
-theme_override_constants/separation = -17
 
-[node name="SearchBar" type="LineEdit" parent="BODY/Search" unique_id=1387496377]
-custom_minimum_size = Vector2(150, 30)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 14
-placeholder_text = "Search"
-max_length = 30
-context_menu_enabled = false
-emoji_menu_enabled = false
-clear_button_enabled = true
-
-[node name="Submit" type="Button" parent="BODY/Search" unique_id=1226026996]
-visible = false
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-text = "Submit"
-
-[node name="Identifier" type="HBoxContainer" parent="BODY" unique_id=167679470]
-custom_minimum_size = Vector2(50, 35)
-layout_mode = 2
-theme_override_constants/separation = -15
-alignment = 1
-
-[node name="Shop" type="Label" parent="BODY/Identifier" unique_id=866944918]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 5
-text = "Shops"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Item" type="Label" parent="BODY/Identifier" unique_id=289765362]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 5
-text = "Items"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Price" type="Label" parent="BODY/Identifier" unique_id=1229087386]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-size_flags_vertical = 5
-text = "Prices"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Contents" type="VBoxContainer" parent="BODY" unique_id=676798035]
+[node name="BODY" type="PanelContainer" parent="ALL" unique_id=688015433]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = -1
-script = ExtResource("4_4xim8")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4xim8")
+
+[node name="BODY" parent="ALL/BODY" unique_id=57840723 instance=ExtResource("4_4xim8")]
+layout_mode = 2
+
+[node name="FOOTER" type="PanelContainer" parent="ALL" unique_id=1745065544]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pqr1d")
