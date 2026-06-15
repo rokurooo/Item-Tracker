@@ -3,10 +3,23 @@
 [ext_resource type="Theme" uid="uid://c700gxvpi6778" path="res://Themes/theme.tres" id="1_if07q"]
 [ext_resource type="Script" uid="uid://luixnttobsos" path="res://MainScripts/content_list.gd" id="2_v1pg8"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_if07q"]
+
 [node name="BODY" type="VBoxContainer" unique_id=57840723]
 clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
 theme = ExtResource("1_if07q")
 theme_override_constants/separation = 3
+
+[node name="HSeparator" type="HSeparator" parent="." unique_id=759337312]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_styles/separator = SubResource("StyleBoxEmpty_if07q")
 
 [node name="Search" type="HBoxContainer" parent="." unique_id=803344540]
 custom_minimum_size = Vector2(20, 0)

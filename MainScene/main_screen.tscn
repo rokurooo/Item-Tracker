@@ -7,7 +7,6 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xim8"]
 content_margin_left = 5.0
-content_margin_top = 0.0
 content_margin_right = 5.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pqr1d"]
@@ -51,6 +50,7 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="BODY" type="PanelContainer" parent="ALL" unique_id=688015433]
+clip_contents = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_4xim8")

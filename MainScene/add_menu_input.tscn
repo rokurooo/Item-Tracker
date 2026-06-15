@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://dxfdmnspslsnq" path="res://MainScripts/add_content.gd" id="2_q087n"]
 [ext_resource type="FontFile" uid="uid://dk4ll28tllnaq" path="res://Fonts/upheavtt.ttf" id="3_q087n"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nb51a"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_63ai0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwowp"]
@@ -95,23 +97,21 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_xngu4")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nb51a")
 script = ExtResource("2_q087n")
 
 [node name="Container" type="VBoxContainer" parent="." unique_id=234673822]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -150.0
-offset_right = 150.0
-offset_bottom = 210.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_xngu4")
 
 [node name="HSeparator" type="HSeparator" parent="Container" unique_id=1216864936]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 5
 theme_override_styles/separator = SubResource("StyleBoxEmpty_63ai0")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Container" unique_id=109286337]
@@ -154,6 +154,7 @@ max_length = 35
 context_menu_enabled = false
 emoji_menu_enabled = false
 clear_button_enabled = true
+virtual_keyboard_type = 1
 
 [node name="MatchedItems" type="VBoxContainer" parent="Container" unique_id=2038756526]
 layout_mode = 2
@@ -169,6 +170,7 @@ max_length = 35
 context_menu_enabled = false
 emoji_menu_enabled = false
 clear_button_enabled = true
+virtual_keyboard_type = 1
 
 [node name="Price" type="LineEdit" parent="Container" unique_id=433526407]
 custom_minimum_size = Vector2(0, 30)
@@ -183,6 +185,7 @@ clear_button_enabled = true
 shortcut_keys_enabled = false
 middle_mouse_paste_enabled = false
 drag_and_drop_selection_enabled = false
+virtual_keyboard_type = 2
 
 [node name="Submit" type="Button" parent="Container" unique_id=697079559]
 custom_minimum_size = Vector2(0, 35)
