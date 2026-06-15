@@ -5,6 +5,7 @@ extends Panel
 var menu_toggled: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	price_amount_input.visible = false
 	warninglabel.visible = false
 	pass # Replace with function body.
 
@@ -20,6 +21,7 @@ func _warn(item, shop, empty: bool):
 @onready var shop_name_input = $Container/MatchedShop/Shop
 
 func _matched_shop(enteredshop: String):
+	_ready_for_price(shop_name_input.text,item_name_input.text)
 	warninglabel.visible = false
 	var shopcontainer = $Container/MatchedShop
 	if enteredshop.is_empty():
@@ -39,6 +41,7 @@ func _matched_shop(enteredshop: String):
 @onready var item_name_input = $Container/MatchedItems/Item
 
 func _matched_item(entereditem: String):
+	_ready_for_price(shop_name_input.text,item_name_input.text)
 	warninglabel.visible = false
 	var itemcontainer = $Container/MatchedItems
 	if entereditem.is_empty():
@@ -57,23 +60,39 @@ func _matched_item(entereditem: String):
 					itemholder.connect("pressed",replaceinput.bind(item_name_input,item["Item_Name"],itemcontainer))
 					itemcontainer.add_child(itemholder)
 
-func _price_input(price_amount):
+
+@onready var price_amount_input = $Container/Price
+
+func _ready_for_price(shop,item):
+	if !shop.is_empty() and !item.is_empty():
+		price_amount_input.visible = true
+	else:
+		price_amount_input.visible = false
+
+
+func _price_input(_price_amount):
 	warninglabel.visible = false
 
 func _submit_items():
 	var data_list = GlobalScript.load_file()
-	var price_input = $Container/Price
-	if price_input.text.is_empty():
+	var shop = shop_name_input.text
+	var item = item_name_input.text
+	var price = price_amount_input.text
+	if price_amount_input.text.is_empty():
 		_warn("none","none",true)
 		return
-	for shop in data_list:
-		if shop.to_lower() == shop_name_input.text.to_lower():
+	for i in data_list:
+		if i.to_lower() == shop_name_input.text.to_lower():
 			print("shopwarn")
-			for item in data_list[shop]:
-				if item["Item_Name"].to_lower() == item_name_input.text.to_lower():
+			for x in data_list[i]:
+				if x["Item_Name"].to_lower() == item_name_input.text.to_lower():
 					print("itemwarn")
 					_warn(item_name_input.text, shop_name_input.text, false)
+					return
 	
+	GlobalScript.save_file(shop,item,price)
+	print("...saved... \n Store = [%s]\nItem = [%s]\nPrice = [%s]" %[shop,item,price])
+
 
 func replaceinput(rawinput, tochange, container):
 	rawinput.text = GlobalScript.to_sentenced_case(tochange)

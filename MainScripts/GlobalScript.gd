@@ -28,7 +28,6 @@ func _ready() -> void:
 func save_file(Store: String, Item: String, Price: String):
 	Store = Store.to_upper()
 	Item = Item.to_upper()
-	Price = Price.to_upper()
 	
 	var date = get_current_date()
 	
@@ -40,33 +39,21 @@ func save_file(Store: String, Item: String, Price: String):
 	if Store not in existing_data:
 		existing_data[Store] = []
 
-	# Check if item already exists and update its price
-	var item_found = false
-	for i in existing_data[Store]:
-		if i["Item_Name"] == Item:
-			i["Item_Price"] = float(Price)
-			i["Date"] = date
-			item_found = true
-			break
-			
-	# Append the new item
-	if not item_found:
-		existing_data[Store].append({
-			"Item_Name": Item,
-			"Item_Price": float(Price),
-			"Date": date
-		})
+	existing_data[Store].append({
+		"Item_Name": Item,
+		"Item_Price": float(Price),
+		"Date": date
+	})
 	
 	var data = existing_data
 	var json_string = JSON.stringify(data, "\t")
 	var file = FileAccess.open(SavePath, FileAccess.WRITE)
 	
 	if file:
-		# 3. Store the string in the file
 		file.store_string(json_string)
 		print("saved")
 		file.close()
-		# File automatically closes when the variable goes out of scope in Godot 4
+		
 	else:
 		print("Failed to open file: ", FileAccess.get_open_error())
 
@@ -113,6 +100,7 @@ func edit_item(shopname,itemname,newprice):
 			oldprice = i["Item_Price"]
 			i["Item_Price"] = float(newprice)
 			i["Date"] = get_current_date()
+			break
 
 	var json_string = JSON.stringify(existing_data,"\t")
 	var file = FileAccess.open(SavePath,FileAccess.WRITE)
