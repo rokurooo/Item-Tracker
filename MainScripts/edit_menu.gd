@@ -9,12 +9,12 @@ var ITEMPRICE: String
 @onready var itemname = $BG/Panel3/VBoxContainer/Itemsname/Item
 @onready var priceinput = $BG/Panel3/VBoxContainer/Price
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
+
+func _update_details():
 	shoplabel.text = SHOPNAME
 	itemname.text = ITEMNAME
-	priceinput.text = ITEMPRICE
-	pass # Replace with function body.
+	priceinput.placeholder_text = ITEMPRICE
+
 
 func _on_cancel_pressed() -> void:
 	visible = false
@@ -23,4 +23,5 @@ func _on_cancel_pressed() -> void:
 
 func _on_confirm_pressed() -> void:
 	emit_signal("edited")
+	visible = false
 	pass # Replace with function body.

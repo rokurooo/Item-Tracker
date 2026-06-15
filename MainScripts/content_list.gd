@@ -8,15 +8,14 @@ var data_list
 func _ready() -> void:
 	data_list = GlobalScript.load_file()
 	display_all_content()
-	# for i in get_child_count():
-	# 	get_child(i).SHOPNAME = "test"
-	pass # Replace with function body.
 
 func clear_content():
 	for i in get_child_count():
 		get_child(i).queue_free()
 
 func display_all_content():
+	data_list = GlobalScript.load_file()
+	clear_content()
 	for shops in data_list:
 		for items in data_list[shops]:
 			var content_instance = contents.instantiate()
@@ -25,4 +24,9 @@ func display_all_content():
 			content_instance.SHOPNAME = shops
 			content_instance.ITEMNAME = items["Item_Name"]
 			content_instance.ITEMPRICE = str(items["Item_Price"])
+			content_instance.connect("boop",booped)
 		print("%s = key" %shops)
+
+func booped():
+	for i in get_child_count():
+		get_child(i).booped()
