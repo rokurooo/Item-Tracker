@@ -1,5 +1,4 @@
 extends PanelContainer
-@export var SHOWMENU: bool
 
 @onready var CurrentDateLabel: Label = $VBoxContainer/DateToday
 

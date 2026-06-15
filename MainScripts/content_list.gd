@@ -30,3 +30,4 @@ func display_all_content():
 func booped():
 	for i in get_child_count():
 		get_child(i).booped()
+

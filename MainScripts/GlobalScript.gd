@@ -121,3 +121,19 @@ func edit_item(shopname,itemname,newprice):
 		file.store_string(json_string)
 		file.close()
 	print('"%s" price have beed updated from %f to %s' %[itemname,oldprice,newprice])
+
+func to_sentenced_case(text:String) -> String:
+	if text.is_empty():
+		return text
+
+	var temptext = text.to_lower()
+
+	temptext = temptext[0].to_upper() + temptext.substr(1)
+
+	return temptext
+
+func search_chars(text: String, search: String) -> bool:
+	for i in search:
+		if i not in text:
+			return false
+	return true

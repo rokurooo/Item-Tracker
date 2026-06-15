@@ -95,6 +95,7 @@ border_width_bottom = 1
 border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
 
 [resource]
+Button/fonts/font = ExtResource("2_de7rr")
 Button/styles/hover = SubResource("StyleBoxFlat_sduji")
 Button/styles/normal = SubResource("StyleBoxFlat_e2k53")
 Button/styles/pressed = SubResource("StyleBoxFlat_nvyf5")

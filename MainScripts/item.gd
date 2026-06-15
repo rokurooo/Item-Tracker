@@ -43,21 +43,21 @@ func update_label(labels):
 	if is_node_ready() and Slabel and Ilabel and Plabel:
 		match labels:
 			"SHOP":
-				Slabel.text = SHOPNAME
+				Slabel.text = GlobalScript.to_sentenced_case(SHOPNAME)
 				if SHOPNAME == "":
 					default_label(labels)
 			"ITEM":
-				Ilabel.text = ITEMNAME
+				Ilabel.text = GlobalScript.to_sentenced_case(ITEMNAME)
 				if ITEMNAME == "":
 					default_label(labels)
 			"PRICE":
-				Plabel.text = ITEMPRICE
+				Plabel.text = GlobalScript.to_sentenced_case(ITEMPRICE)
 				if ITEMPRICE == "":
 					default_label(labels)
 			"":
-				Slabel.text = SHOPNAME
-				Ilabel.text = ITEMNAME
-				Plabel.text = ITEMPRICE
+				Slabel.text = GlobalScript.to_sentenced_case(SHOPNAME)
+				Ilabel.text = GlobalScript.to_sentenced_case(ITEMNAME)
+				Plabel.text = GlobalScript.to_sentenced_case(ITEMPRICE)
 	elif !is_node_ready():
 		request_ready()
 	_update_var()
@@ -84,8 +84,6 @@ func _update_var():
 		i.ITEMNAME = ITEMNAME
 		i.ITEMPRICE = ITEMPRICE
 		
-		print('"Shop" = %s , "Item" = %s , "Price" = %s'%[SHOPNAME,ITEMNAME,ITEMPRICE])
-
 func _on_edit_pressed() -> void:
 	if !edit_menu_toggled:
 		$EditMenu._update_details()
@@ -105,16 +103,19 @@ func _on_delete_pressed() -> void:
 func _on_labels_pressed() -> void:
 	if !options_toggled:
 		emit_signal("boop")
+		$TogglePlayer.speed_scale = 1
 		$TogglePlayer.play("Open")
 		options_toggled = true
 	else:
-		$TogglePlayer.play_backwards("Open")
-		options_toggled = false
+		booped()
 	pass # Replace with function body.
 
 func booped():
 	if options_toggled:
+		$TogglePlayer.speed_scale = 5
 		$TogglePlayer.play_backwards("Open")
+		$HSeparator.visible = false
+		$Buttons.visible = false
 		options_toggled = false
 
 func _delete_confirm():
@@ -122,10 +123,10 @@ func _delete_confirm():
 	queue_free()
 
 func _edit_confirm():
-	get_parent().display_all_content()
 	var NEWPRICE = $EditMenu/BG/Panel3/VBoxContainer/Price.text
 	GlobalScript.edit_item(SHOPNAME,ITEMNAME,NEWPRICE)
 	_on_edit_pressed()
+	get_parent().display_all_content()
 
 func toggle_menus(menutabs,toggle) -> void:
 	if !toggle:

@@ -5,6 +5,18 @@
 [ext_resource type="Script" uid="uid://beihq2chki7h6" path="res://MainScripts/header.gd" id="2_mq451"]
 [ext_resource type="Script" uid="uid://c81owxjrfv4q" path="res://MainScripts/menu.gd" id="3_ikxw6"]
 [ext_resource type="Script" uid="uid://befucb6rdlowp" path="res://MainScripts/exit.gd" id="3_mq451"]
+[ext_resource type="FontFile" uid="uid://dk4ll28tllnaq" path="res://Fonts/upheavtt.ttf" id="5_ikxw6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mq451"]
+bg_color = Color(0.075900815, 0.23722059, 0.28930053, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4xim8"]
 
@@ -41,16 +53,19 @@ corner_detail = 1
 [node name="HEADER" type="PanelContainer" unique_id=1724666578]
 z_index = 20
 z_as_relative = false
+custom_minimum_size = Vector2(0, 80)
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 66.0
 grow_horizontal = 2
 theme = ExtResource("1_ml151")
+theme_override_styles/panel = SubResource("StyleBoxFlat_mq451")
 script = ExtResource("2_mq451")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1279189693]
 z_index = 20
 z_as_relative = false
+custom_minimum_size = Vector2(0, 75)
 layout_mode = 2
 theme_override_constants/separation = 1
 alignment = 1
@@ -91,6 +106,7 @@ script = ExtResource("3_ikxw6")
 
 [node name="Add" parent="VBoxContainer/HBoxContainer/Panel" unique_id=1578601692 instance=ExtResource("2_b6d8j")]
 layout_mode = 1
+theme_override_fonts/font = ExtResource("5_ikxw6")
 text = "+"
 
 [node name="Panel2" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=620007829]
@@ -112,7 +128,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5im0k")
 text = "Item Price Tracker"
 horizontal_alignment = 1
-vertical_alignment = 1
+vertical_alignment = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel3" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=849989989]
@@ -135,6 +151,7 @@ offset_bottom = 21.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/align_to_largest_stylebox = 1
+theme_override_fonts/font = ExtResource("5_ikxw6")
 theme_override_font_sizes/font_size = 20
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ps477")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v7f8x")

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dxfdmnspslsnq" path="res://MainScripts/add_content.gd" id="1_gi5fb"]
 [ext_resource type="Theme" uid="uid://c700gxvpi6778" path="res://Themes/theme.tres" id="2_5hn04"]
 [ext_resource type="PackedScene" uid="uid://diryx7l1prcrw" path="res://Themes/color_palette.tscn" id="3_5hn04"]
+[ext_resource type="FontFile" uid="uid://r1ph7aulgawc" path="res://Fonts/PixelOperatorMono-Bold.ttf" id="3_bepxx"]
+[ext_resource type="FontFile" uid="uid://dk4ll28tllnaq" path="res://Fonts/upheavtt.ttf" id="4_xx12k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0avy4"]
 content_margin_bottom = 10.0
@@ -29,17 +31,65 @@ corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwowp"]
 content_margin_left = 20.0
-bg_color = Color(0.30147502, 0.011222539, 0.16772547, 1)
+content_margin_top = 5.0
+content_margin_right = 20.0
+content_margin_bottom = 5.0
+bg_color = Color(0.42352942, 0.12156863, 0.1764706, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.6080234, 0.0375442, 0.5357394, 1)
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 corner_detail = 1
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_63ai0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bepxx"]
+content_margin_left = 20.0
+content_margin_top = 2.0
+content_margin_right = 20.0
+content_margin_bottom = 4.0
+bg_color = Color(0.11764706, 0.33333334, 0.4, 0.49803922)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xx12k"]
+content_margin_left = 20.0
+content_margin_top = 2.0
+content_margin_right = 20.0
+content_margin_bottom = 4.0
+bg_color = Color(0.11764706, 0.33333334, 0.4, 0.49803922)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ixj3"]
+content_margin_left = 20.0
+content_margin_top = 2.0
+content_margin_right = 20.0
+content_margin_bottom = 4.0
+bg_color = Color(0.11764706, 0.33333334, 0.4, 0.49803922)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6tx4"]
 bg_color = Color(0.03529412, 0.16470589, 0.13725491, 1)
@@ -47,7 +97,7 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
 corner_radius_top_right = 15
 corner_radius_bottom_left = 15
 corner_detail = 1
@@ -58,13 +108,10 @@ border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.60784316, 0.03529412, 0.5372549, 1)
+border_color = Color(0.078431375, 0.14509805, 0.2627451, 1)
 corner_radius_top_right = 15
 corner_radius_bottom_left = 15
 corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ef5g"]
-bg_color = Color(0.08627451, 0.28627452, 0.21176471, 1)
 
 [node name="Add" type="Button" unique_id=1187253625]
 custom_minimum_size = Vector2(42, 42)
@@ -128,34 +175,48 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Warning" type="Label" parent="Menu/Panel/Menu Input/VBoxContainer2" unique_id=1902831188]
-visible = false
 z_index = 1
-custom_minimum_size = Vector2(200, 20)
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/line_spacing = -1
+theme_override_fonts/font = ExtResource("3_bepxx")
+theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_qwowp")
-text = "Warning"
+text = "Warning this item already exist"
 horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="Menu/Panel/Menu Input" unique_id=1075860822]
 layout_mode = 2
 theme_override_constants/separation = 1
 theme_override_styles/separator = SubResource("StyleBoxEmpty_63ai0")
 
-[node name="Shop" type="LineEdit" parent="Menu/Panel/Menu Input" unique_id=572098663]
+[node name="MatchedShop" type="VBoxContainer" parent="Menu/Panel/Menu Input" unique_id=1102683628]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="Shop" type="LineEdit" parent="Menu/Panel/Menu Input/MatchedShop" unique_id=572098663]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_bepxx")
 placeholder_text = "Store Name"
 max_length = 35
 context_menu_enabled = false
 emoji_menu_enabled = false
 clear_button_enabled = true
 
-[node name="Item" type="LineEdit" parent="Menu/Panel/Menu Input" unique_id=1653244157]
+[node name="MatchedItems" type="VBoxContainer" parent="Menu/Panel/Menu Input" unique_id=1003672681]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="Item" type="LineEdit" parent="Menu/Panel/Menu Input/MatchedItems" unique_id=1653244157]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_xx12k")
 placeholder_text = "Item Name"
 max_length = 35
 context_menu_enabled = false
@@ -166,6 +227,7 @@ clear_button_enabled = true
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_3ixj3")
 placeholder_text = "Item Price"
 max_length = 35
 context_menu_enabled = false
@@ -176,18 +238,29 @@ middle_mouse_paste_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="Submit" type="Button" parent="Menu/Panel/Menu Input" unique_id=424429519]
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("4_xx12k")
+theme_override_font_sizes/font_size = 20
 theme_override_styles/pressed = SubResource("StyleBoxFlat_q6tx4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_a0so3")
-theme_override_styles/focus = SubResource("StyleBoxFlat_5ef5g")
 text = "Submit"
 
 [node name="Color Palette" parent="." unique_id=1912251622 instance=ExtResource("3_5hn04")]
-layout_mode = 0
-anchors_preset = 0
+layout_mode = 1
+anchor_left = -4.2619047
+anchor_top = -1.4761904
+anchor_right = -3.2619047
+anchor_bottom = -1.4136904
 offset_left = 380.0
 offset_top = -233.0
 offset_right = 550.0
 offset_bottom = -23.625
+grow_horizontal = 1
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="text_changed" from="Menu/Panel/Menu Input/MatchedShop/Shop" to="." method="_on_shop_text_changed"]
+[connection signal="text_changed" from="Menu/Panel/Menu Input/MatchedShop/Shop" to="." method="_matched_shop"]
+[connection signal="text_changed" from="Menu/Panel/Menu Input/MatchedItems/Item" to="." method="_matched_item"]
+[connection signal="text_changed" from="Menu/Panel/Menu Input/Price" to="." method="_price_input"]
+[connection signal="pressed" from="Menu/Panel/Menu Input/Submit" to="." method="_submit_items"]

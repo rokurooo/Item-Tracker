@@ -11,8 +11,8 @@ var ITEMPRICE: String
 
 
 func _update_details():
-	shoplabel.text = SHOPNAME
-	itemname.text = ITEMNAME
+	shoplabel.text = GlobalScript.to_sentenced_case(SHOPNAME)
+	itemname.text = GlobalScript.to_sentenced_case(ITEMNAME)
 	priceinput.placeholder_text = ITEMPRICE
 
 
