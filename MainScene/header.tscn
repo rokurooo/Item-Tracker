@@ -129,15 +129,9 @@ script = ExtResource("3_ikxw6")
 [node name="Add" type="Button" parent="VBoxContainer/HBoxContainer/Panel" unique_id=1578601692]
 custom_minimum_size = Vector2(42, 42)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -21.0
-offset_top = -21.0
-offset_right = 21.0
-offset_bottom = 21.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -148,6 +142,7 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0avy4")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4xim8")
 text = "+"
+expand_icon = true
 
 [node name="Panel2" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=620007829]
 layout_mode = 2
@@ -156,11 +151,9 @@ theme = SubResource("Theme_pqr1d")
 
 [node name="Title" type="Label" parent="VBoxContainer/HBoxContainer/Panel2" unique_id=1929074990]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.016064256
-anchor_right = 1.0160643
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.7294118, 0.78039217, 0.7647059, 1)
@@ -168,8 +161,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxEmpty_5im0k")
 text = "Item Price Tracker"
 horizontal_alignment = 1
-vertical_alignment = 2
-metadata/_edit_use_anchors_ = true
+vertical_alignment = 1
 
 [node name="Panel3" type="Panel" parent="VBoxContainer/HBoxContainer" unique_id=849989989]
 custom_minimum_size = Vector2(50, 45)
@@ -179,15 +171,9 @@ theme = SubResource("Theme_pqr1d")
 [node name="Exit" type="Button" parent="VBoxContainer/HBoxContainer/Panel3" unique_id=534018645]
 custom_minimum_size = Vector2(42, 42)
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -21.0
-offset_top = -21.0
-offset_right = 21.0
-offset_bottom = 21.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/align_to_largest_stylebox = 1
@@ -196,6 +182,7 @@ theme_override_font_sizes/font_size = 20
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ps477")
 theme_override_styles/hover = SubResource("StyleBoxFlat_v7f8x")
 text = "x"
+expand_icon = true
 script = ExtResource("3_mq451")
 
 [node name="DateToday" type="Label" parent="VBoxContainer" unique_id=1804425377]

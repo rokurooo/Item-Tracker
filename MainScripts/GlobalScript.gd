@@ -17,6 +17,8 @@ func get_current_date() -> String:
 	return "%s %d , %d" % [MONTH, DAY, YEAR]
 
 func _ready() -> void:
+	if OS.has_feature("mobile"):
+		get_window().content_scale_factor = 3.0
 	if not SAVE_DIR.dir_exists("user://save_data"):
 		SAVE_DIR.make_dir("user://save_data")
 

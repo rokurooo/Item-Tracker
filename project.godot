@@ -25,8 +25,11 @@ GlobalScript="*uid://c1momfvcv4neq"
 
 window/size/viewport_width=360
 window/size/viewport_height=800
+window/size/mode=1
 window/size/resizable=false
 window/size/maximize_disabled=true
+window/stretch/aspect="keep_width"
+window/stretch/scale_mode="integer"
 window/handheld/orientation=1
 
 [editor]
@@ -43,3 +46,4 @@ version_control/autoload_on_startup=true
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
